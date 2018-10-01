@@ -11,4 +11,14 @@ class Picture < ApplicationRecord
   def self.created_before(time)
     Picture.where("created_at < ?", time)
   end
+
+  def self.created_month_before
+    number_of_days = 30 #change this value to see query work for a sooner time for testing
+    Picture.where("created_at < ?", (Time.now-60*60*24*number_of_days))
+  end
+
+  def self.pictures_created_in_year(year)
+    Picture.where("created_at <= ? AND created_at > ?", Time.new(year.to_i+1), Time.new(year.to_i))
+  end
+
 end

@@ -1,0 +1,8 @@
+<h1>Most recent pictures</h1>
+<ul>
+  <% @old_pictures.each do |picture| %>
+    <li><%= picture.title %></li>
+  <% end %>
+</ul>
+
+<%=link_to("Index", "/") %>

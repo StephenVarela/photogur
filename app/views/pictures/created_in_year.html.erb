@@ -1,0 +1,8 @@
+<h1>Created in Year <%= @year %></h1>
+<ul>
+  <% @pictures.each do |picture| %>
+    <li><%= picture.title %></li>
+  <% end %>
+</ul>
+
+<%=link_to("Index", "/") %>

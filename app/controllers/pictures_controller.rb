@@ -52,4 +52,13 @@ class PicturesController < ApplicationController
     redirect_to "/pictures"
   end
 
+  def old_pictures
+    @old_pictures = Picture.created_month_before
+  end
+
+  def created_in_year
+    @year = params[:id]
+    @pictures = Picture.pictures_created_in_year(params[:id])
+  end
+
 end
