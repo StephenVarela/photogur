@@ -11,7 +11,11 @@
     <%= link_to("New User", new_user_path)%>
 </header>
 <body>
-
+<% if flash[:message] %>
+  <% flash[:message].each do |message| %>
+    <p><%= message %></p>
+  <% end %>
+<%end %>
 <%= yield %>
 
 </body>
