@@ -8,8 +8,8 @@
 <%=link_to("Old Pictures", old_pictures_url) %>
 
 <h1>Pictures</h1>
-<%= link_to("New Picture", "/pictures/new") %>
+<%= link_to("New Picture", new_picture_path) %>
 <%@pictures.each do |picture|%>
   <p><%=picture.title%>, <%=picture.artist%></p>
-  <%= link_to(image_tag(picture.url), "/pictures/#{picture.id}") %>
+  <%= link_to(image_tag(picture.url), picture_path(picture)) %>
 <%end%>
