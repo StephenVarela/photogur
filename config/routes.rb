@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   get 'pictures/:id/edit' => "pictures#edit"
 
-  resources :users, only: [:new, :create] 
+  resources :users, only: [:new, :create]
+  resources :sessions, only: [:index, :new, :create, :destroy]
 
 end
