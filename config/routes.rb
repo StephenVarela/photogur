@@ -12,5 +12,6 @@ Rails.application.routes.draw do
 
   get 'pictures/:id/edit' => "pictures#edit"
 
+  resources :users, only: [:new, :create] 
 
 end
