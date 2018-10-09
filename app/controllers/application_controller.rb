@@ -18,6 +18,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def ensure_user_owns_picture
+    unless current_user[:id] == @picture.user_id
+      flash[:alert] = "You are not the owner of this picture!"
+      redirect_to new_session_url
+    end
+  end
+
+
+
   private
-  
+
 end
